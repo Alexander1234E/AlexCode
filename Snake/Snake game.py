@@ -1,0 +1,35 @@
+import pygame as pg
+
+
+pg.init()
+screen = pg.display.set_mode((500, 500))
+print("Board size is 500 by 500. Do not put numbers higher than 100.")
+print("NOTE: You can use 125 but the squares will be tiny.")
+print("Please don't use numbers higher than 100, 125 is an exception.")
+n=int(input('put in a number: '))
+#num = int(n)
+for i in range(1, n):
+    pg.draw.line(screen, (255, 255, 255), (500//n*i, 0), (500//n*i, 500))
+for i in range(1, n):
+    pg.draw.line(screen, (255, 255, 255), (0, 500//n*i), (500, 500//n*i))
+#pg.draw.line(screen, (255, 255, 255), (50, 0), (50, 500))
+#pg.draw.line(screen, (255, 255, 255), (100, 0), (100, 500))
+#pg.draw.line(screen, (255, 255, 255), (150, 0), (150, 500))
+#pg.draw.line(screen, (255, 255, 255), (200, 0), (200, 500))
+#pg.draw.line(screen, (255, 255, 255), (250, 0), (250, 500))
+#pg.draw.line(screen, (255, 255, 255), (300, 0), (300, 500))
+#pg.draw.line(screen, (255, 255, 255), (350, 0), (350, 500))
+#pg.draw.line(screen, (255, 255, 255), (400, 0), (400, 500))
+#pg.draw.line(screen, (255, 255, 255), (450, 0), (450, 500))
+#pg.draw.line(screen, (255, 255, 255), (0, 50), (500, 50))
+#pg.draw.line(screen, (255, 255, 255), (0, 100), (500, 100))
+#pg.draw.line(screen, (255, 255, 255), (0, 150), (500, 150))
+#pg.draw.line(screen, (255, 255, 255), (0, 200), (500, 200))
+#pg.draw.line(screen, (255, 255, 255), (0, 250), (500, 250))
+#pg.draw.line(screen, (255, 255, 255), (0, 300), (500, 300))
+#pg.draw.line(screen, (255, 255, 255), (0, 350), (500, 350))
+#pg.draw.line(screen, (255, 255, 255), (0, 400), (500, 400))
+#pg.draw.line(screen, (255, 255, 255), (0, 450), (500, 450))
+pg.display.flip()
+input("(><)")
+
