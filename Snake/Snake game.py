@@ -1,35 +1,32 @@
 import pygame as pg
 
+board = 500
+
 
 pg.init()
-screen = pg.display.set_mode((500, 500))
+b = pg.display.set_mode((500, 500))
 print("Board size is 500 by 500. Do not put numbers higher than 100.")
 print("NOTE: You can use 125 but the squares will be tiny.")
-print("Please don't use numbers higher than 100, 125 is an exception.")
-n=int(input('put in a number: '))
-#num = int(n)
+print("Please don't use numbers that can not be divided by 500. 25 is recommended")
+n = int(input('put in a number: '))
+#num = int(n)``
 for i in range(1, n):
-    pg.draw.line(screen, (255, 255, 255), (500//n*i, 0), (500//n*i, 500))
+    pg.draw.line(b, (255, 255, 255), (500//n*i, 0), (500//n*i, 500))
 for i in range(1, n):
-    pg.draw.line(screen, (255, 255, 255), (0, 500//n*i), (500, 500//n*i))
-#pg.draw.line(screen, (255, 255, 255), (50, 0), (50, 500))
-#pg.draw.line(screen, (255, 255, 255), (100, 0), (100, 500))
-#pg.draw.line(screen, (255, 255, 255), (150, 0), (150, 500))
-#pg.draw.line(screen, (255, 255, 255), (200, 0), (200, 500))
-#pg.draw.line(screen, (255, 255, 255), (250, 0), (250, 500))
-#pg.draw.line(screen, (255, 255, 255), (300, 0), (300, 500))
-#pg.draw.line(screen, (255, 255, 255), (350, 0), (350, 500))
-#pg.draw.line(screen, (255, 255, 255), (400, 0), (400, 500))
-#pg.draw.line(screen, (255, 255, 255), (450, 0), (450, 500))
-#pg.draw.line(screen, (255, 255, 255), (0, 50), (500, 50))
-#pg.draw.line(screen, (255, 255, 255), (0, 100), (500, 100))
-#pg.draw.line(screen, (255, 255, 255), (0, 150), (500, 150))
-#pg.draw.line(screen, (255, 255, 255), (0, 200), (500, 200))
-#pg.draw.line(screen, (255, 255, 255), (0, 250), (500, 250))
-#pg.draw.line(screen, (255, 255, 255), (0, 300), (500, 300))
-#pg.draw.line(screen, (255, 255, 255), (0, 350), (500, 350))
-#pg.draw.line(screen, (255, 255, 255), (0, 400), (500, 400))
-#pg.draw.line(screen, (255, 255, 255), (0, 450), (500, 450))
+    pg.draw.line(b, (255, 255, 255), (0, 500//n*i), (500, 500//n*i))
+
+#pg.draw.rect(screen, (0, 255, 0), (20, 20, 20, 20))
+
+
+
+def draw_snake(x, y):
+    gw = 500//n
+    pg.draw.rect(b, (0, 255, 30), (gw*x, gw*y, gw, gw))
+
+
+x = int(input("where do you want the snake to be? (X)"))
+y = int(input("where do you want the snake to be? (Y)"))
+draw_snake(x, y)
 pg.display.flip()
 input("(><)")
 
